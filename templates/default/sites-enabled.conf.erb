@@ -1,0 +1,11 @@
+<VirtualHost *:80>
+  ServerAdmin <%= node.apache.server_admin %>
+  ServerName locahost
+  DocumentRoot /var/www/<%= node.app.project_name %>/public
+  ErrorLog logs/<%= node.app.project_name %>-error_log
+  CustomLog logs/<%= node.app.project_name %>-access_log common
+  <Directory />
+    Options FollowSymLinks
+    AllowOverride All
+  </Directory>
+</VirtualHost>
